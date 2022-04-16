@@ -264,8 +264,8 @@ func main() {
 	sync := flag.String("sync", "", "comma delimited sync types (users, groups). Required. Example: users,groups")
 	harborUrl := flag.String("harbor_url", "", "required")
 	harborLogin := flag.String("harbor_login", "", "required")
-	harborPass := flag.String("harbor_pass", "", "required")
-	ldapPass := flag.String("ldap_pass", "", "LDAP search password specified in Harbor config")
+	harborPass := flag.String("harbor_pass", os.Getenv("HLS_HARBOR_PASS"), "required. Can be set with HLS_HARBOR_PASS")
+	ldapPass := flag.String("ldap_pass", os.Getenv("HLS_LDAP_PASS"), "LDAP search password specified in Harbor config. Can be set with HLS_LDAP_PASS")
 	verbose := flag.Bool("verbose", false, "")
 	flag.Parse()
 	if *sync == "" ||

@@ -7,11 +7,11 @@ Small utility that forces Harbor to sync all LDAP users and groups.
 -harbor_login string
     required  
 -harbor_pass string  
-    required
+    required. Can be set with HLS_HARBOR_PASS
 -harbor_url string  
     required
 -ldap_pass string  
-    LDAP search password specified in Harbor config
+    LDAP search password specified in Harbor config. Can be set with HLS_LDAP_PASS
 -sync string  
     comma delimited sync types (users, groups). Required. Example: users,groups
 -verbose  
